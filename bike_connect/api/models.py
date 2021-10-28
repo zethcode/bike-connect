@@ -29,3 +29,13 @@ class User(models.Model):
 
 class Itinerary(models.Model):
     name = models.CharField(max_length=30)
+
+
+class Bike(models.Model):
+    name = models.CharField(max_length=30)
+    brand = models.CharField(max_length=30)
+    model_name = models.CharField(max_length=30)
+    year_model = models.IntegerField()
+    displacement = models.IntegerField(null=False)
+    variant = models.CharField(max_length=20)
+    type = models.CharField(max_length=30)
