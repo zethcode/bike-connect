@@ -9,6 +9,11 @@ def main(request):
     return HttpResponse("<h1>Hello, World!</h1>")
 
 
-class BikeView(generics.ListAPIView):
+class BikeListView(generics.ListAPIView):
+    queryset = Bike.objects.all()
+    serializer_class = BikeSerializer
+
+
+class BikeDetailView(generics.RetrieveAPIView):
     queryset = Bike.objects.all()
     serializer_class = BikeSerializer
