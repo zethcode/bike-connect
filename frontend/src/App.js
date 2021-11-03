@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Users from './components/Users/Users';
 import Home from './components/Home/Home';
 import NotFound from './components/NotFound/NotFound';
+import SignUp from './components/SignUp/SignUp';
+import SignIn from './components/SignIn/SignIn';
 
 function App() {
   return (
@@ -15,16 +17,22 @@ function App() {
                 <Link to="/">Home</Link>
               </li>
               <li>
+                <Link to="/signup">Sign Up</Link>
+              </li>
+              <li>
+                <Link to="/signin">Sign In</Link>
+              </li>
+              <li>
                 <Link to="/users">Users</Link>
               </li>
             </ul>
           </nav>
-
           <Switch>
-            
-          <Route exact path="/users" component={() => <Users />} />
-          <Route exact path="/" component={() => <Home />} />
-          <Route component={NotFound}/>
+            <Route exact path="/signup" component={() => <SignUp />} />
+            <Route exact path="/signin" component={() => <SignIn />} />
+            <Route exact path="/users" component={() => <Users />} />
+            <Route exact path="/" component={() => <Home />} />
+            <Route component={NotFound}/>
           </Switch>
       </div>
     </Router>
