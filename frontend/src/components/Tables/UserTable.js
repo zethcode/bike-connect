@@ -6,8 +6,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
-export default function BasicTable({ data }) {
-    console.log("ang data", data)
+const UserTable = ({ data }) => {
     return (
     <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -30,7 +29,7 @@ export default function BasicTable({ data }) {
                     <TableCell>{row.first_name + " " + row.last_name}</TableCell>
                     <TableCell>{row.email}</TableCell>
                     <TableCell>{row.is_active ? "Yes" : "No"}</TableCell>
-                    <TableCell>{row.date_joined}</TableCell>
+                    <TableCell>{row.date_joined.substr(0, 10)}</TableCell>
                 </TableRow>
             ))}
             </TableBody>
@@ -38,3 +37,5 @@ export default function BasicTable({ data }) {
     </TableContainer>
     );
 }
+
+export default UserTable

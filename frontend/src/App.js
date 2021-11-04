@@ -4,12 +4,15 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Users from './components/Users/Users';
 import Home from './components/Home/Home';
 import NotFound from './components/NotFound/NotFound';
-import SignUp from './components/SignUp/SignUp';
-import SignIn from './components/SignIn/SignIn';
+import SignUp from './components/Authentication/SignUp';
+import SignIn from './components/Authentication/SignIn';
+// import { ThemeProvider } from '@emotion/react';
+// import { useStyles, theme } from './styles';
 
 function App() {
   return (
     <Router>
+    {/* <ThemeProvider theme={theme}> */}
       <div className="App">
           <nav>
             <ul>
@@ -35,6 +38,7 @@ function App() {
             <Route component={NotFound}/>
           </Switch>
       </div>
+      {/* </ThemeProvider> */}
     </Router>
   );
 }

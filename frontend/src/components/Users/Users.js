@@ -1,6 +1,6 @@
 import { getUsers } from "../../services/user";
 import { useEffect, useState } from "react";
-import Table from "../Table/Table";
+import UserTable from "../Tables/UserTable";
 
 const Users = () => {
     const [users, setUsers] = useState([]);
@@ -18,7 +18,7 @@ const Users = () => {
     return (
         <div>
             <h2>Users List</h2>
-            <Table data={users} />
+            <UserTable data={users} />
         </div>
     )
 }
