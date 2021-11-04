@@ -1,13 +1,8 @@
 import { FormControl, Grid, TextField, Button, InputAdornment, IconButton, Typography, FormHelperText, Container, Paper } from '@mui/material';
-// import authLogo from './../../../assets/logo/tabp-black-on-transparent.png';
-// import { Visibility, VisibilityOff } from '@material-ui/icons';
 import { useState, useRef, useCallback } from 'react';
-// import LoadingBackdrop from '../../LoadingBackdrop';
-// import { useAuthState } from './../../../firebase';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
-// import useStyles from './styles';
-// import { setLoading, selectLoadingStatus } from '../../../app/loadingSlice';
+import { setUser } from "../../services/user";
 // import { useDispatch, useSelector } from 'react-redux';
 
 const SignUp = () => {
@@ -32,6 +27,8 @@ const SignUp = () => {
     
     // Submit handler
     const handleSignUpSubmit = useCallback(async (values) => {
+        console.log("ang json", values);
+        setUser(values);
         // dispatch(setLoading({isLoading: true}))
         // try {
         //     const returnValue = await signUp(values)
@@ -61,6 +58,16 @@ const SignUp = () => {
                                 <Typography variant="h4">Create an account</Typography>
                             </Grid>
                             
+                            <TextField 
+                                required
+                                id="register-username" 
+                                type="text"
+                                name="username"
+                                label="Username"
+                                InputLabelProps={{ required: false }}
+                                {...register("username")}
+                            />
+
                             <Grid container direction="row" spacing={2}>
                                 <Grid item xs={6} sm={6}>
                                         <TextField 
@@ -70,7 +77,7 @@ const SignUp = () => {
                                             type="text"
                                             color="primary"
                                             InputLabelProps={{ required: false }}
-                                            {...register("firstName")}
+                                            {...register("first_name")}
                                         />
                                 </Grid>
 
@@ -82,7 +89,7 @@ const SignUp = () => {
                                         type="text"
                                         color="primary"
                                         InputLabelProps={{ required: false }}
-                                        {...register("lastName")}
+                                        {...register("last_name")}
                                     />
                                 </Grid>
                             </Grid>

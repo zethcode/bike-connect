@@ -5,6 +5,8 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import { Link } from "react-router-dom";
+import { Button } from "@mui/material";
 
 const UserTable = ({ data }) => {
     return (
@@ -17,6 +19,7 @@ const UserTable = ({ data }) => {
                     <TableCell>Email</TableCell>
                     <TableCell>Active</TableCell>
                     <TableCell>Date Created</TableCell>
+                    <TableCell>Action</TableCell>
                 </TableRow>
             </TableHead>
             <TableBody>
@@ -30,6 +33,11 @@ const UserTable = ({ data }) => {
                     <TableCell>{row.email}</TableCell>
                     <TableCell>{row.is_active ? "Yes" : "No"}</TableCell>
                     <TableCell>{row.date_joined.substr(0, 10)}</TableCell>
+                    <TableCell>
+                        <Button>Edit</Button>
+                        <br/>
+                        <Button>Delete</Button>
+                    </TableCell>
                 </TableRow>
             ))}
             </TableBody>
