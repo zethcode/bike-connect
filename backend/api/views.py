@@ -1,12 +1,5 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-# from rest_framework.generics import (
-#     ListAPIView, 
-#     RetrieveAPIView, 
-#     CreateAPIView,
-#     UpdateAPIView,
-#     DestroyAPIView
-# )
 from .serializers import BikeSerializer, UserSerializer
 from .models import Bike
 from django.contrib.auth import get_user_model, get_user
